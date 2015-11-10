@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9527.1" systemVersion="15C31f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9525.1"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kQl-bw-Go4">
+                                <rect key="frame" x="160" y="49" width="280" height="40"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <state key="normal" title="Show" backgroundImage="btn">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7zP-4h-xSQ"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="r6d-5g-ku3">
+                                <rect key="frame" x="160" y="113" width="280" height="184"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="r6d-5g-ku3" secondAttribute="bottom" constant="303" id="0eW-B7-mCv"/>
+                            <constraint firstItem="r6d-5g-ku3" firstAttribute="leading" secondItem="kQl-bw-Go4" secondAttribute="trailing" constant="-280" id="82a-D0-qfc"/>
+                            <constraint firstItem="r6d-5g-ku3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="EKW-Xi-m48"/>
+                            <constraint firstItem="kQl-bw-Go4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Jeh-Wz-OMc"/>
+                            <constraint firstItem="kQl-bw-Go4" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="29" id="kMZ-LO-dhJ"/>
+                            <constraint firstItem="r6d-5g-ku3" firstAttribute="top" secondItem="kQl-bw-Go4" secondAttribute="bottom" constant="24" id="nnQ-wA-083"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tv" destination="r6d-5g-ku3" id="T1Q-PJ-Avz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="445" y="437"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="btn" width="280" height="40"/>
+    </resources>
+</document>
