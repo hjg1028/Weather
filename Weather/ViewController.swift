@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     
     func loadWeatherData() throws {
         
-        let url = NSURL(string: "http://www.weather.com.cn/data/cityinfo/101010100.html")!
+        let url = NSURL(string: "http://www.weather.com.cn/adat/sk/101010100.html")!
         let data: NSData = NSData(contentsOfURL: url)!
         
         
@@ -31,16 +31,15 @@ class ViewController: UIViewController {
         
         let weatherInfo = json.objectForKey("weatherinfo")!
         
-        //{"weatherinfo":{"city":"北京","cityid":"101010100","temp1":"15℃","temp2":"5℃","weather":"多云","img1":"d1.gif","img2":"n1.gif","ptime":"08:00"}}
-        
         let city = weatherInfo.objectForKey("city")!
-        let cityID = weatherInfo.objectForKey("cityid")!
-        let temp1 = weatherInfo.objectForKey("temp1")!
-        let temp2 = weatherInfo.objectForKey("temp2")!
-        let weather = weatherInfo.objectForKey("weather")!
-        let ptime = weatherInfo.objectForKey("ptime")!
+        let wind = weatherInfo.objectForKey("WD")!
+        let temp = weatherInfo.objectForKey("temp")!
+        let time = weatherInfo.objectForKey("time")!
+        let ws = weatherInfo.objectForKey("WS")!
+        let sd = weatherInfo.objectForKey("SD")!
         
-        tv.text = "\(city)\n\(temp2)-\(temp1)\n\(weather)\n\(ptime)\n\(cityID)"
+        
+        tv.text = "City:\t\t\t\(city)\nTemperature:\t\(temp)℃\nWind:\t\t\t\(wind)\(ws)\nHumidity:\t\t\(sd)\nUpdate time:\t\(time)"
         
     }
 
